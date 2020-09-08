@@ -4,17 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-<script src="/login/js/vue.js"></script>
-<script src="/login/js/jquery.1.8.js"></script>
+<link rel="stylesheet" href="css/login.css">
+<script src="vue.js"></script>
+
 </head>
 <body>
-<div id="app" class="out">
-<div>
-    
+<div class="header">
+    <a class="botton" href="">网站首页</a>
+    <a class="botton" href="">关于汇昇</a>
+    <a class="botton" href="">理财产品</a>
+    <a class="botton" href="">理财学院</a>
+    <a class="botton" href="">新闻资讯</a>
+    <a class="botton" href="">政策法规</a>
+    <a class="botton" href="">加入汇昇</a>
+    <a class="botton" href="">关于我们</a>
+
 </div>
+<div id="app" class="out">
+ <div>
+     <img src="image/Form-logo.png"/>
+     <span>汇昇投资</span>
+ </div>
+
+ <div class="text">
+    <input type="text" v-model="loginName" placeholder="用户名"/>
+  </div>
+
+  <div class="text">
+   <input type="text" v-model="pwd" placeholder="密码"/>
+  </div>
+
+  <div>
+      <input type="checkbox" name="" class="checkbox">
+      <span>记住交易账号</span>
+  </div>
+
+  <div class="bottom" @click="login">立即登录</div> 
+  <a href="register.html">免费注册</a>
 
 </div>
 </body>
-<script>
 
-</script>
+<script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        loginName:'',
+        pwd:''
+      },
+      methods: {
+          // 定义事件处理方法showInfo
+        login () {
+  
+          $.ajaxSetup({
+            contentType:"application/json;charset=utf-8"
+          });
+  
+          var data= {"loginName":this.loginName,"pwd":this.pwd}
+  
+          $.post("http://api.tutestudio.net/api/login",JSON.stringify(data),function(res){
+            if(res.code==200){
+              alert("登陆成功")
+              location.href='home.html'
+            }else{
+              alert("登录失败")
+            }
+          
+          })
+        }
+       
+        }
+        })
+    
+  </script>

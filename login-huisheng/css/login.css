@@ -1,5 +1,65 @@
 body{
-    background-image: url(/login-huisheng/image/banner1.jpg);
+    background-image: url(../image/banner1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     }
+    .out{
+        background-color: white;
+        width: 350px;
+        height: 400px; 
+        border-radius: 10px; 
+        margin: 0px auto; 
+        margin-top: 100px;
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    .header{
+        background-color: red;
+        width: 350px;
+        height: 50px;
+    }
+    .botton{
+        background-color: red;
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        color: white;
+    }
+    .top{ 
+        background-color: white;
+        height: 50px;
+        color: white;
+        line-height: 50px;
+        padding-left: 40px;
+        margin-left: -40px;
+      
+    }
+    .top img{
+        float: left;
+        margin-left: -40px;
+        margin-top: 50px;
+    }
+    .text{
+        height: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+       
+     }
+     .text input{
+        width: 90%;
+        height: 90%;
+        padding-left: 20px;
+    }
+    .bottom{
+        background-color: red;
+        height: 50px;
+        text-align: center;
+        color: white;
+        line-height: 50px;
+        cursor: pointer;
+        border-radius: 10px;
+     }
+    
